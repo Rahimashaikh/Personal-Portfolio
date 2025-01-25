@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -41,3 +42,7 @@ I created my portfolio website by using nextjs , reactjs and tailwindcss
 >>>>>>> 2d4332ead890e9063276d8d37d493892635d25c8
 "# Personal-Portfolio" 
 "# Personal-Portfolio" 
+=======
+# Personal-Portfolio
+I created my personal portfolio by using nextjs , reactjs and tailwindcss
+>>>>>>> e11af7c1ec3d0df3db99ca3e80bd20c901cf7e1c
