@@ -6,7 +6,7 @@ export default function Skills() {
   const skillsRef = useRef<HTMLDivElement | null>(null);
   const skillItemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const progressBarsRef = useRef<(HTMLDivElement | null)[]>([]);
-  
+
   // Skill percentages
   const skillPercentages = [
     100, // HTML
@@ -35,6 +35,7 @@ export default function Skills() {
 
   useEffect(() => {
     if (skillsRef.current) {
+      // Animate entire skills section
       gsap.fromTo(
         skillsRef.current,
         { opacity: 0, y: 100 },
@@ -42,6 +43,7 @@ export default function Skills() {
       );
     }
 
+    // Animate individual skill items and progress bars
     skillItemsRef.current.forEach((item, index) => {
       if (item && progressBarsRef.current[index]) {
         gsap.fromTo(
@@ -57,10 +59,10 @@ export default function Skills() {
         );
       }
     });
-  }, []);
+  }, []); // Empty array means the effect runs once on mount
 
   return (
-    <section className="bg-gray-900 text-white py-20" ref={skillsRef}>
+    <section ref={skillsRef} className="py-20 bg-gray-100">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold mb-10">My Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">

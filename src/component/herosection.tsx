@@ -2,11 +2,19 @@
 
 import Head from "next/head";
 import Image from "next/image";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 import Contact from "@/component/contact";
 import About from "@/component/about";
 import Skills from "@/component/skills";
-import {FaCss3Alt, FaEnvelope, FaFacebook, FaGithub, FaHtml5, FaInstagram , FaJs, FaLinkedin, FaRegKeyboard, FaWhatsapp }  from "react-icons/fa";
+import {
+  FaCss3Alt,
+  FaFacebook,
+  FaHtml5,
+  FaInstagram,
+  FaJs,
+  FaLinkedin,
+  FaRegKeyboard,
+} from "react-icons/fa";
 import Product from "@/component/product";
 import { Menu } from "lucide-react";
 import {
@@ -25,10 +33,12 @@ export default function Home() {
   
 
   return (
+
     <div className="bg-slate-200">
-      
+
+
       <Head>
-        <title>Rahima's Portfolio</title>
+        <title>Rahima&apos;s Portfolio</title>
         <meta
           name="description"
           content="Rahima's personal portfolio website"
@@ -40,20 +50,20 @@ export default function Home() {
       {/* Header Section */}
       <header className="bg-black text-white py-4">
         <div className="container mx-auto flex items-center justify-between">
-          <h1 className="text-3xl font-bold">Rahima's Portfolio</h1> 
-           <nav className="md:hidden">
+          <h1 className="text-3xl font-bold">Rahima&apos;s Portfolio</h1>
+          <nav className="md:hidden">
             <Sheet>
               <SheetTrigger>
                 <Menu className="h-6 w-6 text-pink-600" />
               </SheetTrigger>
-              <SheetContent>
+              <SheetContent  className="bg-slate-200">
                 <SheetHeader>
-                  <SheetTitle className=" bg-slate-200 font-bold text-purple-800 text-4xl">
-                    Rahima's Portfolio
+                  <SheetTitle className=" bg-slate-200 underline font-bold text-purple-800 text-3xl">
+                    Rahima&apos;s Portfolio
                   </SheetTitle>
                   <SheetDescription>
-                  <ul className=" font-bold mt-40 text-lg">
-                      <li className=" bg-slate-200">
+                    <ul className=" font-bold mt-7 flex flex-col  items-center space-y-4">
+                      <li className=" bg-slate-200 ">
                         <Link
                           href="/#about"
                           className="text-pink-700 bg-slate-200 italic text-3xl font-semibold hover:text-black"
@@ -61,24 +71,24 @@ export default function Home() {
                           About Me
                         </Link>
                       </li>
-                      <li className=" bg-slate-200">
+                      <li className=" bg-slate-200  flex flex-col  items-center space-y-4">
                         <Link
                           href="/#skills"
-                          className="text-pink-700 bg-slate-200  italic text-3xl font-semibold hover:text-black"
+                          className="text-pink-700  flex flex-col  items-center space-y-4 bg-slate-200  italic text-3xl font-semibold hover:text-black"
                         >
                           My Skills
                         </Link>
-                         <Link
+                        <Link
                           href="/#product"
-                          className="text-pink-700 bg-slate-200  italic text-3xl font-semibold hover:text-black"
+                          className="text-pink-700  flex flex-col  items-center space-y-4 bg-slate-200  italic text-3xl font-semibold hover:text-black"
                         >
-                          My product
+                          My Creation (Projects)
                         </Link>
                         <Link
                           href="/#contact"
-                          className="text-pink-700 bg-slate-200  italic text-3xl font-semibold hover:text-black"
+                          className="text-pink-700 bg-slate-200  flex flex-col  items-center space-y-4 italic text-3xl font-semibold hover:text-black"
                         >
-                          Contact Me 
+                          Contact Me
                         </Link>
                       </li>
                     </ul>
@@ -87,38 +97,36 @@ export default function Home() {
                 </SheetHeader>
               </SheetContent>
             </Sheet>
-             </nav>
+          </nav>
 
-             <nav className="hidden md:block">
-        <ul className="flex space-x-4 text-lg">
-          <li>
-            <Link href="/#" className="text-white font-semibold hover:text-pink-600">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" className="text-white font-semibold hover:text-pink-600">
-              About 
-            </Link>
-          </li>
-          <li>
-            <Link href="/skills" className="text-white font-semibold hover:text-pink-600">
-              Skills
-            </Link>
-          </li>
-          <li>
-            <Link href="/product" className="text-white font-semibold hover:text-pink-600">
-              My Product
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" className="text-white font-semibold hover:text-pink-600">
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
-        </div>
+
+<nav className="hidden md:block">
+  <ul className="flex space-x-4 text-lg">
+    <li>
+    <Link href="/#about" className="text-white font-semibold hover:text-pink-600">About Me</Link>
+    </li>
+    <li>
+      <Link href="/#skills"className="text-white font-semibold hover:text-pink-600">My Services & Skills  </Link>
+    </li>
+    <li>
+      <Link href="/#product"className="text-white font-semibold hover:text-pink-600">My Creation (Projects)</Link>
+    </li> 
+    <li>
+      <Link href="/#contact" className="text-white font-semibold hover:text-pink-600">Contact Me</Link>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+
+
+
+
+
+
+
+
       </header>
 
         
@@ -126,7 +134,7 @@ export default function Home() {
     
       <div className="flex items-center justify-between w-full max-w-5xl">
         <div className="flex-1 text-center">
-        <div data-aos="zoom-in-down" 
+        <div data-aos="zoom-in-down rounded-lg shadow-lg" className="w-40 h-40 mx-auto"
         ></div>
         <Image 
             src="/images/pic 1.jpeg"
@@ -137,64 +145,87 @@ export default function Home() {
           />
           
         </div>
-        <div className="flex-1 text-white px-8 text-7xl font-bold text-right">
-          <p className="block transition-transform duration-500 hover:scale-110">I Am</p>
-          <p className="block transition-transform duration-500 hover:scale-110">Rahima Salahuddin</p>
+        <div className="flex-1 text-center">
+          <h1 className="text-4xl font-bold text-white mb-4 ">
+            Hi, I&apos;m Rahima Salahuddin
+          </h1>
+          <p className="text-gray-400 text-xl mb-4">
+            A Web Developer With A Passion For Creating Dynamic And
+            Interactive Web Development.
+          </p>
+          <a
+  href="https://www.linkedin.com/in/rahima-shaikh-2b09a328b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BRvMI%2Fz8GRFWXO6kLt3gtdg%3D%3D"
+  className="bg-pink-500 justify-center text-white rounded-full px-2 py-2 mt-4 hover:bg-blue-600 transition duration-300 flex items-center space-x-2"
+>
+  <span>Contact Me Via LinkedIn</span>
+  <FaLinkedin />
+</a>
+ 
+</div>
 
-        
-        </div>
       </div>
     </main>
-    
-    
-    
-
-     <About /> 
      
+      {/* About Section */}
+      <About />
+      
+      
+    
+      <section className="py-10 bg-slate-800" id="skills">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl font-bold text-center mb-8">
+            <span className="text-purple-100">My</span> Services
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+              <FaRegKeyboard className="text-4xl text-teal-500 mb-4" />
+              <h2 className="text-xl font-semibold mb-2">TypeScript</h2>
+              <p className="text-gray-600 hover:bg-slate-200 mb-4">
+                I am proficient in integrating TypeScript into both frontend and
+                backend projects, ensuring type safety across large codebases
+                and making the development process more efficient. I constantly
+                stay updated with the latest advancements in TypeScript,
+                applying best practices to enhance the quality and
+                maintainability of every project I work on.
+              </p>
+              <a href="#" className="text-blue-500 hover:underline">
+                Learn More
+              </a>
+            </div>
 
-c
-        <section className="py-10 bg-slate-800" id="services">
-            <div className="container mx-auto px-4">
-                <h1 className="text-3xl font-bold text-center mb-8">
-                    <span className="text-purple-100">My</span> Services
-                </h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-                        <FaRegKeyboard className="text-4xl text-teal-500 mb-4" />
-                        <h2 className="text-xl font-semibold mb-2">TypeScript</h2>
-                        <p className="text-gray-600 mb-4">
-                            I am a TypeScript expert proficient in harnessing its static typing
-                            and modern JavaScript features to build scalable and maintainable
-                            applications. My expertise ensures robust error detection, improved
-                            code quality, and seamless integration across diverse development environments.
-                        </p>
-                        <a href="#" className="text-blue-500 hover:underline">Learn More</a>
-                    </div>
+            <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+              <FaJs className="text-4xl text-teal-500 mb-4" />
+              <h2 className="text-xl font-semibold mb-2">JavaScript</h2>
+              <p className="text-gray-600 hover:bg-slate-200 mb-4">
+                I have a strong foundation in JavaScript and use it to create
+                dynamic, interactive web applications. With a focus on both core
+                JavaScript and modern frameworks, I build optimized,
+                high-performance projects. I am constantly learning and
+                improving my skills, staying up to date with the latest
+                advancements to enhance my development capabilities every day.
+              </p>
+              <a href="#" className="text-blue-500 hover:underline">
+                Learn More
+              </a>
+            </div>
 
-                    <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-                        <FaJs className="text-4xl text-teal-500 mb-4" />
-                        <h2 className="text-xl font-semibold mb-2">JavaScript</h2>
-                        <p className="text-gray-600 mb-4">
-                            As a JavaScript expert, I specialize in building dynamic and interactive
-                            web applications. With in-depth knowledge of JavaScript frameworks like
-                            React and Node.js, I deliver efficient solutions that optimize performance
-                            and enhance user experiences across platforms.
-                        </p>
-                        <a href="#" className="text-blue-500 hover:underline">Learn More</a>
-                    </div>
-
-                    <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-                        <FaHtml5 className="text-4xl text-teal-500 mb-4" />
-                        <h2 className="text-xl font-semibold mb-2">HTML </h2>
-                        <p className="text-gray-600 mb-4">
-                            I have expertise in CSS and Figma, allowing me to create visually
-                            appealing and user-friendly web applications. My CSS skills ensure
-                            precise, responsive designs, while Figma enables me to prototype
-                            and iterate on user interfaces effectively. This combination
-                            ensures seamless and intuitive user experiences.
-                        </p>
-                        <a href="#" className="text-blue-500 hover:underline">Learn More</a>
-                    </div>
+            <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+              <FaHtml5 className="text-4xl text-teal-500 mb-4" />
+              <h2 className="text-xl font-semibold mb-2">HTML </h2>
+                <p className="text-gray-600 hover:bg-slate-200 mb-4">
+                I have a strong grasp of HTML, creating well-structured and
+                accessible web pages using HTML. I focus on writing clean,
+                semantic code that ensures a seamless user experience across
+                devices and browsers. I am proficient in optimizing HTML for 
+                search engines (SEO) and ensuring that web pages are compliant 
+                with web standards. My expertise includes using HTML to create 
+                interactive forms, embedding multimedia elements, and leveraging 
+                the latest HTML APIs to enhance functionality.
+                </p>
+              <a href="#" className="text-blue-500 hover:underline">
+                Learn More
+              </a>
+            </div>
 
                     <div className="bg-white shadow-lg rounded-lg p-6 text-center">
                         <FaCss3Alt className="text-4xl text-teal-500 mb-4" />
@@ -217,58 +248,51 @@ c
 
 
 
-
-
-
-
-
-
-
-     <Skills />
-     
-     <Product />
-
-     <Contact />
-
-     
-        
-       
+      {/* Product Section */}
       
+      <Skills />
+
+      <Product />
+      
+      <Contact />
+     
+      {/* Footer Section */}
+
+
       {/* Footer Section */}
       <footer className="bg-black text-white overflow-hidden py-6 mt-auto">
         <div className="container mx-auto text-center">
-          &copy; {new Date().getFullYear()} Rahima's Portfolio. All rights
+          &copy; {new Date().getFullYear()} Rahima&apos;s Portfolio. All rights
           reserved.
           <div className="mb-6 sm:mb-0">
-              <h3 className="text-pink-500 text-lg font-semibold mb-4">
-                Follow Me
-              </h3>
-              <div className="flex justify-center space-x-3 mb-6 sm:mb-0 ">
-                <a
-                  href="https://www.facebook.com/rahima.cuteie"
-                  className="text-gray-400 hover:text-pink-400"
-                >
-                  <FaFacebook />
-                </a>
-                <a
-                  href="https://www.instagram.com/"
-                  className="text-gray-400 hover:text-pink-400"
-                >
-                  <FaInstagram />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/rahima-shaikh-2b09a328b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BRvMI%2Fz8GRFWXO6kLt3gtdg%3D%3D"
-                  className="text-gray-400 hover:text-pink-400"
-                >
-                  <FaLinkedin />
-                </a>
-              </div>
-                        
-              
-         </div>            
-                    
+            <h3 className="text-pink-500 text-lg font-semibold mb-4">
+              Follow Me
+            </h3>
+            <div className="flex justify-center space-x-3 mb-6 sm:mb-0 ">
+              <a
+                href="https://www.facebook.com/rahima.cuteie"
+                className="text-gray-400 hover:text-blue-600"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                className="text-gray-400 hover:text-pink-400"
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rahima-shaikh-2b09a328b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BRvMI%2Fz8GRFWXO6kLt3gtdg%3D%3D"
+                className="text-gray-400 hover:text-blue-400"
+              >
+                <FaLinkedin />
+              </a>
+   
+   
+            </div>
+          </div>
         </div>
-  </footer>
-</div>
+      </footer>
+    </div>
   );
 }

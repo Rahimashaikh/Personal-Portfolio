@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
+
+
 // Define a Product interface for the product structure
 interface Product {
   name: string;
@@ -15,6 +17,8 @@ const products: Product[] = [
     description: 'This project showcases my skills in web development and design.',
     image: '/images/makeuo.jpeg',
     url: 'https://web-by-rahima.vercel.app/',
+  
+
   },
   {
     name: ' Project 2',
@@ -28,8 +32,18 @@ const products: Product[] = [
     image: '/images/3.jpeg',
     url: 'https://static-resume-by-rahimavercelapp.vercel.app//',
   },
-  
-  
+  {
+    name: ' Project 4',
+    description: 'In this project i am creating a arthmethic calculator by using html , css & javascript',
+    image: '/images/4.jpg',
+    url: 'https://calculator-by-rahima.vercel.app//',
+  },
+  {
+    name: ' Project 5',
+    description: 'I created a simple word-counter using html , css & javascript . It is counts the words and a number of words in a given text. ',
+    image: '/images/333.jpeg',
+    url: 'https://word-counter-by-rahima.vercel.app//',
+  },
 ];
 
 const ProductSection = () => {
@@ -64,7 +78,7 @@ const ProductSection = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900 py-10">
+    <section id="projects" className="min-h-screen bg-gray-900 py-10">
       <h1 className="text-4xl font-bold text-center text-gray-100 mb-10">My 
         Creation (PROJECTS)</h1>
       <div className="flex flex-wrap justify-center gap-8">
@@ -90,7 +104,7 @@ const ProductSection = () => {
           </a>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
