@@ -9,13 +9,13 @@ export default function Skills() {
 
   // Skill percentages
   const skillPercentages = [
-    100, // HTML
+    90, // HTML
     70, // CSS
-    95, // JavaScript
-    95, // TypeScript
-    70, // Canvas
+    70, // JavaScript
+    75, // TypeScript
+    80, // Canvas
     100, // Word excel
-    80, // content writing
+    90, // content writing
     95, // Next.js
     90, // Tailwind CSS
   ];
@@ -62,7 +62,7 @@ export default function Skills() {
   }, []); // Empty array means the effect runs once on mount
 
   return (
-    <section ref={skillsRef} className="py-20 bg-gray-100">
+    <section ref={skillsRef} className="py-20 bg-gray-900">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold mb-10">My Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">

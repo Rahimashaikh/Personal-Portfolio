@@ -44,6 +44,12 @@ const products: Product[] = [
     image: '/images/333.jpeg',
     url: 'https://word-counter-by-rahima.vercel.app//',
   },
+  {
+    name: ' Project 6',
+    description: 'I created my static resume cv using html , css & javascript ',
+    image: '/images/static.webp',
+    url: 'https://milestone-1-two-kappa.vercel.app/',
+  },
 ];
 
 const ProductSection = () => {

@@ -6,172 +6,121 @@ import "aos/dist/aos.css";
 import Contact from "@/component/contact";
 import About from "@/component/about";
 import Skills from "@/component/skills";
-import {
-  FaCss3Alt,
-  FaFacebook,
-  FaHtml5,
-  FaInstagram,
-  FaJs,
-  FaLinkedin,
-  FaRegKeyboard,
-} from "react-icons/fa";
 import Product from "@/component/product";
-import { Menu } from "lucide-react";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+
 import Link from "next/link";
+import { FaCss3Alt, FaFacebook, FaHtml5, FaInstagram, FaJs, FaLinkedin, FaRegKeyboard } from "react-icons/fa";
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  
+  useEffect(() => {
+    gsap.set(".profile-img, .intro-text", { opacity: 0 });
+
+    gsap.to(".profile-img", {
+      y: 0,
+      opacity: 1,
+      duration: 1.5,
+      ease: "power3.out",
+    });
+
+    gsap.to(".intro-text", {
+      x: 0,
+      opacity: 1,
+      duration: 0.5,
+      ease: "power3.out",
+      delay: 0.3,
+    });
+  }, []);
+
+  useEffect(() => {
+    gsap.to(".star", {
+      y: "random(-20, 20)",
+      x: "random(-20, 20)",
+      opacity: "random(0.5, 1)",
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
+  }, []);
 
   return (
-
-    <div className="bg-slate-200">
-
-
+    <div className="bg-gray-900 text-white min-h-screen relative overflow-hidden">
       <Head>
         <title>Rahima&apos;s Portfolio</title>
-        <meta
-          name="description"
-          content="Rahima's personal portfolio website"
-        
-         />
+        <meta name="description" content="Rahima's personal portfolio website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {/* Animated Stars */}
+      <div className="absolute inset-0 z-0">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="star bg-white rounded-full absolute"
+            style={{
+              width: `${Math.random() * 3}px`,
+              height: `${Math.random() * 3}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              opacity: Math.random(),
+            }}
+          ></div>
+        ))}
+      </div>
+
       {/* Header Section */}
-      <header className="bg-black text-white py-4">
-        <div className="container mx-auto flex items-center justify-between">
+      <header className="bg-black text-white py-4 fixed w-full top-0 z-50 shadow-md">
+        <div className="container mx-auto flex items-center justify-between px-6">
           <h1 className="text-3xl font-bold">Rahima&apos;s Portfolio</h1>
-          <nav className="md:hidden">
-            <Sheet>
-              <SheetTrigger>
-                <Menu className="h-6 w-6 text-pink-600" />
-              </SheetTrigger>
-              <SheetContent  className="bg-slate-200">
-                <SheetHeader>
-                  <SheetTitle className=" bg-slate-200 underline font-bold text-purple-800 text-3xl">
-                    Rahima&apos;s Portfolio
-                  </SheetTitle>
-                  <SheetDescription>
-                    <ul className=" font-bold mt-7 flex flex-col  items-center space-y-4">
-                      <li className=" bg-slate-200 ">
-                        <Link
-                          href="/#about"
-                          className="text-pink-700 bg-slate-200 italic text-3xl font-semibold hover:text-black"
-                        >
-                          About Me
-                        </Link>
-                      </li>
-                      <li className=" bg-slate-200  flex flex-col  items-center space-y-4">
-                        <Link
-                          href="/#skills"
-                          className="text-pink-700  flex flex-col  items-center space-y-4 bg-slate-200  italic text-3xl font-semibold hover:text-black"
-                        >
-                          My Skills
-                        </Link>
-                        <Link
-                          href="/#product"
-                          className="text-pink-700  flex flex-col  items-center space-y-4 bg-slate-200  italic text-3xl font-semibold hover:text-black"
-                        >
-                          My Creation (Projects)
-                        </Link>
-                        <Link
-                          href="/#contact"
-                          className="text-pink-700 bg-slate-200  flex flex-col  items-center space-y-4 italic text-3xl font-semibold hover:text-black"
-                        >
-                          Contact Me
-                        </Link>
-                      </li>
-                    </ul>
-                   
-                  </SheetDescription>
-                </SheetHeader>
-              </SheetContent>
-            </Sheet>
+          <nav className="hidden md:block">
+            <ul className="flex space-x-6 text-lg">
+              <li><Link href="/#about" className="hover:text-pink-600">About Me</Link></li>
+              <li><Link href="/#skills" className="hover:text-pink-600">My Skills</Link></li>
+              <li><Link href="/#product" className="hover:text-pink-600">My Projects</Link></li>
+              <li><Link href="/#contact" className="hover:text-pink-600">Contact Me</Link></li>
+            </ul>
           </nav>
-
-
-<nav className="hidden md:block">
-  <ul className="flex space-x-4 text-lg">
-    <li>
-    <Link href="/#about" className="text-white font-semibold hover:text-pink-600">About Me</Link>
-    </li>
-    <li>
-      <Link href="/#skills"className="text-white font-semibold hover:text-pink-600">My Services & Skills  </Link>
-    </li>
-    <li>
-      <Link href="/#product"className="text-white font-semibold hover:text-pink-600">My Creation (Projects)</Link>
-    </li> 
-    <li>
-      <Link href="/#contact" className="text-white font-semibold hover:text-pink-600">Contact Me</Link>
-    </li>
-  </ul>
-</nav>
-</div>
-
-
-
-
-
-
-
-
-
-
+        </div>
       </header>
 
-        
-        <main className="bg-slate-900 h-screen flex items-center justify-center">
-    
-      <div className="flex items-center justify-between w-full max-w-5xl">
-        <div className="flex-1 text-center">
-        <div data-aos="zoom-in-down rounded-lg shadow-lg" className="w-40 h-40 mx-auto"
-        ></div>
-        <Image 
-            src="/images/pic 1.jpeg"
-            alt="Rahima's Profile Picture"
-            width={500}
-            height={500}
-            className="rounded-lg shadow-lg transition-transform duration-500 hover:scale-105"
-          />
-          
+      {/* Main Section */}
+      <main className="relative flex items-center justify-center min-h-screen">
+        <div className="relative z-10 flex items-center w-full max-w-5xl p-6">
+          <div className="flex-1 text-center">
+            <Image 
+              src="/images/pic 1.jpeg"
+              alt="Rahima's Profile Picture"
+              width={300}
+              height={300}
+              className="profile-img rounded-full shadow-lg transition-transform duration-500 hover:scale-110"
+            />
+          </div>
+          <div className="flex-1 text-center intro-text">
+            <h1 className="text-4xl font-bold mb-4">Hi, I&apos;m Rahima Salahuddin</h1>
+            <p className="text-gray-300 text-xl mb-6">
+              A Web Developer With A Passion For Creating Dynamic And Interactive Web Applications.
+            </p>
+            <a
+              href="https://www.linkedin.com/in/rahima-shaikh-2b09a328b/"
+              className="bg-pink-500 text-white rounded-full px-4 py-3 flex items-center justify-center space-x-2 shadow-lg hover:bg-blue-600 transition duration-300"
+            >
+              <span>Contact Me Via LinkedIn</span>
+              <FaLinkedin />
+            </a>
+          </div>
         </div>
-        <div className="flex-1 text-center">
-          <h1 className="text-4xl font-bold text-white mb-4 ">
-            Hi, I&apos;m Rahima Salahuddin
-          </h1>
-          <p className="text-gray-400 text-xl mb-4">
-            A Web Developer With A Passion For Creating Dynamic And
-            Interactive Web Development.
-          </p>
-          <a
-  href="https://www.linkedin.com/in/rahima-shaikh-2b09a328b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BRvMI%2Fz8GRFWXO6kLt3gtdg%3D%3D"
-  className="bg-pink-500 justify-center text-white rounded-full px-2 py-2 mt-4 hover:bg-blue-600 transition duration-300 flex items-center space-x-2"
->
-  <span>Contact Me Via LinkedIn</span>
-  <FaLinkedin />
-</a>
- 
-</div>
-
-      </div>
-    </main>
-     
+      </main>
       {/* About Section */}
       <About />
       
       
     
-      <section className="py-10 bg-slate-800" id="skills">
+      <section className="py-10 bg-slate-900" id="skills">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold text-center mb-8">
             <span className="text-purple-100">My</span> Services
